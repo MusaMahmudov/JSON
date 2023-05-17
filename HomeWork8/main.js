@@ -15,6 +15,19 @@ let user7 = [];
 let user8 = [];
 let user9 = [];
 let user10 = [];
+let userAll = [];
+userAll.push(
+  user1,
+  user2,
+  user3,
+  user4,
+  user5,
+  user6,
+  user7,
+  user8,
+  user9,
+  user10
+);
 getData("https://jsonplaceholder.typicode.com/todos")
   .then((data) => {
     data.map((x) => {
@@ -40,47 +53,12 @@ getData("https://jsonplaceholder.typicode.com/todos")
         user10.push(x);
       }
     });
-
-    return user1;
+    return userAll;
   })
-  .then((user) => {
-    showData(user);
-    return user2;
-  })
-  .then((user) => {
-    showData(user);
-    return user3;
-  })
-  .then((user) => {
-    showData(user);
-    return user4;
-  })
-  .then((user) => {
-    showData(user);
-    return user5;
-  })
-  .then((user) => {
-    showData(user);
-    return user6;
-  })
-  .then((user) => {
-    showData(user);
-    return user7;
-  })
-  .then((user) => {
-    showData(user);
-    return user8;
-  })
-  .then((user) => {
-    showData(user);
-    return user9;
-  })
-  .then((user) => {
-    showData(user);
-    return user10;
-  })
-  .then((user) => {
-    showData(user);
+  .then((users) => {
+    users.map((user) => {
+      showData(user);
+    });
   });
 
 function showData(user) {
